@@ -1,0 +1,9 @@
+<div class="w-screen h-screen pt-10">
+    <div *ngIf="( productsList$ |async) as productsList" class="flex flex-row justify-center w-full flex-wrap">
+        <div *ngFor='let product of productsList'>
+            <app-product [product]='product'>
+            </app-product>
+        </div>
+
+    </div>
+</div>

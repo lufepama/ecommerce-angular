@@ -1,0 +1,32 @@
+<main class="h-screen bg-gray-200 w-screen">
+
+    <div class="h-screen bg-red-200">
+        <div class="flex flex-col items-center pt-20">
+            <h1>Signup</h1>
+            <form (submit)="onSubmit()" class="flex flex-col">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Email" value="" #username>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" value="" #email>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Password" value="" #password>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Password" value="" #confirmpassword>
+                </mat-form-field>
+                <span *ngIf="(signUpMessage$ | async) as signUpMessage">
+                    {{signUpMessage}}
+                </span>
+                <button class="bg-green-400" (click)="onSubmit()">Enviar</button>
+            </form>
+        </div>
+
+    </div>
+
+</main>

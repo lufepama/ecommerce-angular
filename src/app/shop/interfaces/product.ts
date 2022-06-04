@@ -1,10 +1,10 @@
 export interface Product {
-    name: String,
-    description: String,
-    price: String,
+    name: string,
+    description: string,
+    price: string,
     digital: Boolean,
-    image: String,
-    rating: Number,
-    previousPrice: String,
-    id: Number
+    image: string,
+    rating: number,
+    previousPrice: string,
+    id: number
 }

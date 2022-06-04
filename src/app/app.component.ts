@@ -8,27 +8,10 @@ import { Product } from './shop/interfaces/product';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
 
-  productsList$: Observable<Product[]>
-
-  constructor(
-    private ShopSvc: ShopService
-  ) {
-    this.productsList$ = ShopSvc.getProductsList()
-  }
 
   ngOnInit(): void {
-    this.getProductList();
-  }
-
-  getProductList(): void {
-    this.ShopSvc.getProducts()
-      .subscribe(data => this.ShopSvc.updateProductList(data))
-  }
-
-  ngOnDestroy(): void {
-
   }
 
 }

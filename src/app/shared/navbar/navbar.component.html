@@ -1,3 +1,26 @@
 <div class="w-screen bg-red-400 h-20 flex flex-row justify-between pl-10 pr-10 pt-4 ">
     <a [routerLink]="['/']"><span class="text-3xl">TechShop</span></a>
+    <div *ngIf="authToken$ | async; else elseBlock" class="">
+        <div class="flex flex-row">
+            <div class="mr-5 flex flex-row">
+                <div class="h-14 w-14 bg-gray-300 rounded-3xl mr-4">
+
+                </div>
+                <div>
+                    <span *ngIf="userInformation$|async as userInformation" class="text-lg">
+                        Hola, {{userInformation.username}}
+                    </span>
+                </div>
+            </div>
+            <i class="fa-solid fa-cart-shopping text-3xl text-blue-700"></i>
+            <div class="flex  items-center justify-center ml-1 h-4 w-4 bg-green-300 rounded-md">
+                <span *ngIf="(shoppingCart$ | async) as shoppingCart" class="font-bold text-md">
+                    {{shoppingCart.length}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <a [routerLink]="['/login']"><span>Login</span></a>
+    </ng-template>
 </div>
